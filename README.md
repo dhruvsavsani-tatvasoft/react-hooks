@@ -1,70 +1,140 @@
-# Getting Started with Create React App
+# React Hooks Master Cheat Sheet & Example Apps
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the ultimate React Hooks resource repository!  
+This project contains **detailed cheat sheets**, **quick reference tables**, **mini-guides**, and **live example apps** for all major React hooks, including built-in and experimental hooks introduced in React 18+.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+1. [Overview](#overview)  
+2. [React Hooks Cheat Sheets & Mini-Guides](#react-hooks-cheat-sheets--mini-guides)  
+3. [Example Apps](#example-apps)  
+4. [How to Use](#how-to-use)  
+5. [Hooks Covered](#hooks-covered)  
+6. [Contributing](#contributing)  
+7. [License](#license)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Overview
 
-### `npm test`
+This project aims to provide a **comprehensive learning and revision tool** for React Hooks, combining:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Detailed explanations** for each hook  
+- **Practical example code snippets**  
+- **Quick reference tables** with 1-line purposes and examples  
+- **Mini-guides** for interview prep and daily coding reference  
+- **Live demo components** showcasing usage  
 
-### `npm run build`
+Whether you are a beginner or advanced React developer, this repo helps you master hooks effectively.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## React Hooks Cheat Sheets & Mini-Guides
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Full Text-Based Cheat Sheet / Mind Map (Categorized)
 
-### `npm run eject`
+- **State Hooks:** useState, useReducer, useOptimistic  
+- **Effect Hooks:** useEffect, useLayoutEffect, useInsertionEffect, useEffectEvent  
+- **Performance / Memoization Hooks:** useMemo, useCallback, useDeferredValue, useTransition  
+- **Reference / DOM Hooks:** useRef, useImperativeHandle  
+- **Context / Store Hooks:** useContext, useSyncExternalStore  
+- **Concurrent / Experimental Hooks:** useId, useDebugValue, useActionState
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Quick Reference Table (1-Line Purpose + Example)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Hook                | Purpose                         | Example                             |
+|---------------------|--------------------------------|-----------------------------------|
+| useState            | Add state to functional comps   | `const [count, setCount] = useState(0);` |
+| useReducer          | Manage complex state            | `const [state, dispatch] = useReducer(reducer, initialState);` |
+| useOptimistic       | Optimistic UI updates           | `const [likes, addLike] = useOptimistic(0, (prev, action) => prev + action);` |
+| useEffect           | Run side effects after render   | `useEffect(() => fetchData(), []);` |
+| useLayoutEffect     | Run effect before browser paint | `useLayoutEffect(() => measureDOM(), []);` |
+| useInsertionEffect  | Insert styles before paint      | `useInsertionEffect(() => insertStyles(), []);` |
+| useEffectEvent      | Stable event callbacks          | `const onClick = useEffectEvent(() => console.log(count));` |
+| useMemo             | Memoize expensive computation   | `const value = useMemo(() => computeHeavy(), [dep]);` |
+| useCallback         | Memoize functions               | `const fn = useCallback(() => doSomething(), [dep]);` |
+| useDeferredValue    | Defer low-priority updates      | `const deferred = useDeferredValue(text);` |
+| useTransition       | Mark low-priority updates       | `const [isPending, startTransition] = useTransition();` |
+| useRef              | Persist mutable values or DOM refs | `const inputRef = useRef();` |
+| useImperativeHandle | Customize what ref exposes      | `useImperativeHandle(ref, () => ({ focus: () => {} }));` |
+| useContext          | Consume React context           | `const value = useContext(MyContext);` |
+| useSyncExternalStore| Subscribe safely to external stores | `const state = useSyncExternalStore(subscribe, getSnapshot);` |
+| useId               | Generate stable unique IDs      | `const id = useId();` |
+| useDebugValue       | Show custom debug info in DevTools | `useDebugValue(state);` |
+| useActionState      | Manage async action state (experimental) | `const [state, runAction] = useActionState(action);` |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 3. Mini-Guide by Category with Usage Examples
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Each hook includes:
 
-## Learn More
+- **Purpose**  
+- **Usage example snippet**  
+- **When and why to use it**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Perfect for quick interview prep or as a handy coding reference.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Example Apps
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This repo also contains React components demonstrating practical usage of hooks, including but not limited to:
 
-### Analyzing the Bundle Size
+- `UseStateApp` (counter and form input examples)  
+- `UseReducerApp` (complex state management)  
+- `UseTransitionApp` (concurrent UI updates)  
+- `UseSyncExternalStoreApp` (external store subscription)  
+- `UseDeferredValueApp`, `UseCallbackApp`, `UseMemoApp`, and many more...
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## How to Use
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. **Clone the repo**
 
-### Advanced Configuration
+   ```bash
+   git clone https://github.com/dhruvsavsani-tatvasoft/react-hooks.git
+   cd react-hooks-cheatsheet
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+2. **Install dependencies**
 
-### Deployment
+   ```bash
+   npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+3. **Run the app locally**
 
-### `npm run build` fails to minify
+   ```bash
+   npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. **View examples**
+
+Uncomment any of the example components in `App.jsx` to see it in action.
+
+Use cheat sheets and mini-guides in the `docs` folder or wherever you maintain your notes.
+
+---
+
+## Hooks Covered
+
+| Category               | Hooks                                                      |
+|------------------------|------------------------------------------------------------|
+| **State**              | useState, useReducer, useOptimistic                         |
+| **Effect**             | useEffect, useLayoutEffect, useInsertionEffect, useEffectEvent |
+| **Performance**        | useMemo, useCallback, useDeferredValue, useTransition       |
+| **Refs / DOM**         | useRef, useImperativeHandle                                 |
+| **Context / Store**    | useContext, useSyncExternalStore                            |
+| **Concurrent / Experimental** | useId, useDebugValue, useActionState                  |
+
+---
+
+## Contributing
+
+Contributions and feedback are welcome!  
+Feel free to open issues or submit pull requests to improve examples, add hooks, or enhance documentation.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
