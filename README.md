@@ -108,10 +108,10 @@ This repo also contains React components demonstrating practical usage of hooks,
    npm start
 
 4. **View examples**
+    ```bash
+    Uncomment any of the example components in `App.jsx` to see it in action.
 
-Uncomment any of the example components in `App.jsx` to see it in action.
-
-Use cheat sheets and mini-guides in the `docs` folder or wherever you maintain your notes.
+    Use cheat sheets and mini-guides in the `docs` folder or wherever you maintain your notes.
 
 ---
 
