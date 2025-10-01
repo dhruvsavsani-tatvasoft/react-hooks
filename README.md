@@ -95,7 +95,7 @@ This repo also contains React components demonstrating practical usage of hooks,
 
    ```bash
    git clone https://github.com/dhruvsavsani-tatvasoft/react-hooks.git
-   cd react-hooks-cheatsheet
+   cd react-hooks
 
 2. **Install dependencies**
 
